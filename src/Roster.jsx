@@ -1,28 +1,24 @@
 import React, { Component } from 'react'
-import Students from './Students'
+import Student from './Student'
 
-class Roster extends Component {
+export default class Roster extends Component {
     render() {
-        // console.log(this)
-        console.log(this.props.students)
-        const students = this.props.students.map((student, idx) => {
+        // console.log(this.props)
+
+        const studentsComponents = this.props.students.map((student, i) => {
             return (
-                <Students
-                key={`student-${idx}`}
-                student={student}
-                name={student.name}
-                bio={student.bio}
+                <Student
+                    name={student.name}
+                    bio={student.bio}
+                    scores={student.scores}
+                    key={`student-${i}`}
                 />
-                )
-            })
-            console.log(students)
+            )
+        })
         return (
             <div>
-                {students}
-                
+                {studentsComponents}
             </div>
         )
     }
 }
-
-export default Roster

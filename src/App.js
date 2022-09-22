@@ -62,11 +62,11 @@ const students = [
   }
 ]
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>
-        <Roster
+        <Roster 
         students={students}
         />
       </div>
@@ -74,4 +74,3 @@ class App extends Component {
   }
 }
 
-export default App
